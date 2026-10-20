@@ -19,4 +19,8 @@
 | Final documentation | `docs/` |
 
 #
-  
+## Quick start (PostgreSQL)
+```bash
+createdb clinicdb
+./run_all.sh            # builds schema, loads data, runs all experiments, writes ./evidence
+```
