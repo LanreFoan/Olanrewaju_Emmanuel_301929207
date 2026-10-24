@@ -41,10 +41,12 @@ The database deals with registration of patients, personnel and departments info
 
 | File | Contents |
 | --- | --- |
-| [Design](portfolio_1_Design.md) | Entities, attributes, keys, relationships and business rules. |
-| [ER diagram](portfolio_1_ERDiagram.md) | The four tables and their relationships. |
-| [Normalisation](portfolio_1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF. |
-| [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, keys, date checks and the open-loan index. |
-| [Sample records](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans. |
-| [Constraint tests] | Six deliberately invalid inserts and the final count query. |
+| [Design](portfolio_1_Design.md) | Entities, attributes, keys, relationships and business rules |
+| [ER diagram](portfolio_1_ERDiagram.md) | Mermaid ER diagram + cardinality decisions |
+| [Normalisation](portfolio_1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF reasoning and trade-offs |
+| [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, complete DDL with keys and constraints |
+| [Sample records](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans |
+| [Constraint tests](portfolio_1_ConstraintTest) | Deliberate invalid inserts, proving the constraints work |
 | [Evidence](portfolio_1_Evidence.md) | Links to the screenshots stored in screenshots/. |
+
+
