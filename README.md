@@ -1,6 +1,13 @@
 # Advanced Database Systems Portfolio
 
-**Case study:** MetriCare Specialist Hospital Management System (Simulated) | **Stack:** PostgreSQL 16, MongoDB 7, Docker
+Name: Olanrewaju Emmanuel\
+Student ID: 301929207\
+Course: MIT 8103-Advanced Database Systems 
+
+**Case study:** MetriCare Specialist Hospital Management System (Simulated)
+
+This portfolio demonstrates relational database design, query processing and optimisation, transactions and concurrency, a NoSQL model, and distributed/cloud database architecture for a hypothetical hospital.
+
 
 ## Tech Stack
 - PostgreSQL: primary relational database
@@ -9,6 +16,7 @@
 - Mermaid: ER diagram source
 
 #
+## Portfolio folders
 | Portfolio | Folder |
 |---|---|
 | Design and modelling | `portfolio-1-database-design/` |
@@ -18,9 +26,5 @@
 | Distributed and cloud architecture| `portfolio-5-distributed-cloud/` |
 | Final documentation | `docs/` |
 
-#
-## Quick start (PostgreSQL)
-```bash
-createdb clinicdb
-./run_all.sh            # builds schema, loads data, runs all experiments, writes ./evidence
-```
+Each portfolio folder has its own README with the exact commands, expected results and the evidence file it produces.
+
