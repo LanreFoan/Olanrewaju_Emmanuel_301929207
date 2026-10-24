@@ -36,3 +36,15 @@
 
 ## Scope 
 The database deals with registration of patients, personnel and departments information, appointment, consultations, diagnosis, laboratory tests, prescriptions, medications, invoices, and payments. One appointment consists of the relationship between one patient and one doctor and can lead to the consultation at all with only one outcome. Consultation can involve several diagnoses, prescriptions, and laboratory tests. Laboratory test is related to only one type of test and includes only one recorded test result. Prescriptions can include several medications, and invoices can have several payments, but cannot exceed the total invoice amount. There are used unique keys and fictitious data. Management of inpatients, surgery, insurance claim processing, payroll, complete pharmacy database, and integration with other systems are not included.
+
+## Implementation files
+
+| File | Contents |
+| --- | --- |
+| [Design](portfolio_1_Design.md) | Entities, attributes, keys, relationships and business rules. |
+| [ER diagram](portfolio_1_ERDiagram.md) | The four tables and their relationships. |
+| [Normalisation](portfolio_1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF. |
+| [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, keys, date checks and the open-loan index. |
+| [Sample records](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans. |
+| [Constraint tests] | Six deliberately invalid inserts and the final count query. |
+| [Evidence](portfolio_1_Evidence.md) | Links to the screenshots stored in screenshots/. |
