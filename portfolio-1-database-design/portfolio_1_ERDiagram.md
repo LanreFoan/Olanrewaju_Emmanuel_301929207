@@ -97,3 +97,25 @@ erDiagram
 	PATIENT||--o{INVOICE:"receives"
 	INVOICE||--o{PAYMENT:"has"
 ```
+
+## Explanation of Keys and Relationships
+
+### Primary Key (PK)
+A primary key uniquely identifies each record in a table. For example, `PatientID` identifies each patient and cannot be duplicated.
+
+### Foreign Key (FK)
+A foreign key connects a record to another table. For example, `PatientID` in the `APPOINTMENT` table identifies the patient associated with an appointment.
+
+### Unique Key (UK)
+A unique key prevents duplicate values in a field or combination of fields. For example, `DepartmentName` must be unique. The unique `AppointmentID` reference in `CONSULTATION` ensures that an appointment has at most one consultation.
+
+### Relationship Symbols
+
+| Symbol | Meaning |
+|---|---|
+| `||` | Exactly one |
+| `o|` | Zero or one |
+| `o{` | Zero or many |
+| `|{` | One or many |
+
+**For example, `PATIENT ||--o{ APPOINTMENT` means that each appointment belongs to exactly one patient, while a patient can have zero or many appointments.
