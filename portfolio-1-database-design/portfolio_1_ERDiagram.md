@@ -87,7 +87,6 @@ erDiagram
 	DEPARTMENT|o--o{STAFF:"employs"
 	APPOINTMENT||--o|CONSULTATION:"produces"
 	CONSULTATION||--o{DIAGNOSIS:"records"
-	PATIENT||--o{LABORATORY_REQUEST:"has"
 	STAFF||--o{LAB_REQUEST:"requests"
 	CONSULTATION|o--o{LAB_REQUEST:"relates_to"
 	PATIENT||--o{PRESCRIPTION:"receives"
