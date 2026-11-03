@@ -46,7 +46,7 @@ The database deals with registration of patients, personnel and departments info
 | [Normalisation](portfolio_1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF reasoning and trade-offs |
 | [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, complete DDL with keys and constraints |
 | [Sample Data](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans |
-| [Constraint tests](portfolio_1_ConstraintTest) | Deliberate invalid inserts, proving the constraints work |
-| [Evidence](portfolio_1_Evidence.md) | Links to the screenshots stored in screenshots/. |
+| [Constraint tests](portfolio_1_ConstraintTests.sql) | Deliberate invalid inserts, proving the constraints work |
+| [Evidence] | Links to the screenshots stored in screenshots/. |
 
 
