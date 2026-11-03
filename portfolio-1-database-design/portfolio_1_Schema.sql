@@ -1,6 +1,6 @@
 -- MetriCare Specialist Hospital Management System
 -- PostgreSQL 16 database schema
-11 tables in the public schema.
+-- 11 tables in the public schema.
 
 BEGIN;
 
