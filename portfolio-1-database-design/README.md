@@ -49,4 +49,14 @@ The database deals with registration of patients, personnel and departments info
 | [Constraint tests](portfolio_1_ConstraintTests.sql) | Deliberate invalid inserts, proving the constraints work |
 | [Evidence](screenshots) | Links to the screenshots stored in screenshots/. |
 
+## Implementation
+The MetriCare Specialist Hospital database was implemented using PostgreSQL 18 and pgAdmin 4. It consists of 11 related tables covering patients, departments, staff, appointments, consultations, diagnoses, laboratory requests, prescriptions, prescription medications, invoices and payments.
 
+Primary keys, foreign keys, NOT NULL, UNIQUE and CHECK constraints were implemented to maintain data integrity and enforce the database rules. Sample records were inserted successfully into the database.
+
+## Test Results
+The database constraints were tested using the SQL statements in portfolio_1_ConstraintTests.sql. All 12 invalid INSERT statements were rejected by PostgreSQL as expected.
+
+The tests covered NOT NULL, UNIQUE, FOREIGN KEY and CHECK constraints. For example, an attempt to insert a patient without a date of birth was rejected with SQLSTATE 23502, confirming that the NOT NULL constraint on Patients.DateOfBirth was working correctly.
+
+The test results demonstrate that the implemented constraints prevent invalid records from being inserted and help maintain data integrity.
