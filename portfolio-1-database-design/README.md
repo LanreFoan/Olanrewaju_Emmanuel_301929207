@@ -47,6 +47,6 @@ The database deals with registration of patients, personnel and departments info
 | [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, complete DDL with keys and constraints |
 | [Sample Data](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans |
 | [Constraint tests](portfolio_1_ConstraintTests.sql) | Deliberate invalid inserts, proving the constraints work |
-| [Evidence](/screenshots) | Links to the screenshots stored in screenshots/. |
+| [Evidence](screenshots) | Links to the screenshots stored in screenshots/. |
 
 
