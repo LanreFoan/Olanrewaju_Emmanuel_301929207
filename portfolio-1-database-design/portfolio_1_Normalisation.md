@@ -8,10 +8,10 @@ The same three simulated appointments are used throughout the example. Only the 
 
 Suppose a hospital records patient details, doctor details, and appointment information in one table.
 
-| PatientID | PatientName | DoctorID | DoctorName | Appointments |
-|---|---|---|---|---|
-| 1 | Ada James | 10 | Dr. Cole | Appointment 101: 20 Oct 2026, Cardiology; Appointment 102: 22 Oct 2026, Cardiology |
-| 2 | Ben Cole | 10 | Dr. Cole | Appointment 103: 23 Oct 2026, Cardiology |
+ | PatientID | PatientName | DoctorID | DoctorName | Appointments |
+ | --- | ---| --- | --- | --- |
+ | 1 | Adaeze Okafor | 1 | Dr. Chika Nwosu |  Appointment 101: 10 Nov 2026, 09:00; Appointment 102: 10 Nov 2026, 10:00 |
+ | 2 | Tunde Bello |   1 | Dr. Chika Nwosu |    Appointment 103: 10 Nov 2026, 11:00 |
 
 The first row contains two appointments in one cell. Finding, updating, or cancelling one appointment becomes difficult because multiple records are stored together.
 
@@ -23,11 +23,12 @@ The first row contains two appointments in one cell. Finding, updating, or cance
 
 Each appointment now has its own row.
 
-| AppointmentID (PK) | PatientID | PatientName | DoctorID | DoctorName | AppointmentDate | DepartmentName |
-|---|---|---|---|---|---|---|
-| 101 | 1 | Ada James | 10 | Dr. Cole | 2026-10-20 | Cardiology |
-| 102 | 1 | Ada James | 10 | Dr. Cole | 2026-10-22 | Cardiology |
-| 103 | 2 | Ben Cole | 10 | Dr. Cole | 2026-10-23 | Cardiology |
+  |AppointmentID (PK) | PatientID  | PatientName |  DoctorID |  DoctorName |  AppointmentDateTime  | DepartmentName|
+  | --- | ---| --- | --- | --- | --- | --- |
+  | 101  | 1 | Adaeze Okafor | 1 | Dr. Chika Nwosu | 2026-11-10 09:00  | General Medicine |                                                                             
+  |102 | 1 |Adaeze Okafor | 1    | Dr. Chika Nwosu | 2026-11-10 10:00    |  General Medicine |                      
+  |103  |   2    | Tunde Bello |  1 | Dr. Chika Nwosu | 2026-11-10 11:00    |  General Medicine  |
+                                                                                     
 
 **Primary key:** `AppointmentID` uniquely identifies each appointment.
 
@@ -62,10 +63,10 @@ The following dependencies explain the separation:
 
 **Primary key:** `PatientID`
 
-| PatientID (PK) | FullName |
-|---|---|
-| 1 | Ada James |
-| 2 | Ben Cole |
+  |PatientID (PK)  | FullName
+ | --- | ---|
+  |1       |         Adaeze Okafor |
+ | 2          |      Tunde Bello |
 
 Each patient's name is stored once, avoiding repeated patient details across appointments.
 
@@ -73,9 +74,9 @@ Each patient's name is stored once, avoiding repeated patient details across app
 
 **Primary key:** `DepartmentID`
 
-| DepartmentID (PK) | DepartmentName |
-|---|---|
-| 1 | Cardiology |
+  | DepartmentID (PK) |  DepartmentName |
+ | --- | ---|
+ |1     |   General Medicine |
 
 The department name is stored separately rather than repeated for every doctor or appointment.
 
@@ -84,9 +85,9 @@ The department name is stored separately rather than repeated for every doctor o
 **Primary key:** `StaffID`  
 **Foreign key:** `DepartmentID` references `Department`.
 
-| StaffID (PK) | FullName | Role | DepartmentID (FK) |
-|---|---|---|---|
-| 10 | Dr. Cole | Doctor | 1 |
+  |StaffID (PK) |   FullName    |      Role  |   DepartmentID (FK) |
+ | --- | ---| --- | --- |
+ | 1  |   Dr. Chika Nwosu |  Doctor  | 1|
 
 The staff table stores the doctor's details once. The department ID connects the doctor to Cardiology.
 
@@ -95,11 +96,11 @@ The staff table stores the doctor's details once. The department ID connects the
 **Primary key:** `AppointmentID`  
 **Foreign keys:** `PatientID` references `Patient`; `DoctorID` references `Staff`.
 
-| AppointmentID (PK) | PatientID (FK) | DoctorID (FK) | AppointmentDateTime |
-|---|---|---|---|
-| 101 | 1 | 10 | 2026-10-20 |
-| 102 | 1 | 10 | 2026-10-22 |
-| 103 | 2 | 10 | 2026-10-23 |
+  AppointmentID (PK) | PatientID (FK) | DoctorID (FK) |  AppointmentDateTime |
+ | --- | ---| --- | --- |
+ | 101  |  1  |   1   |  2026-11-10 09:00 |
+ | 102  | 1  |  1  |  2026-11-10 10:00 |
+ | 103 |  2  |  1  | 2026-11-10 11:00 |
 
 The appointment table stores appointment-specific information and uses foreign keys to connect each appointment to its patient and doctor.
 
