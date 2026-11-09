@@ -19,7 +19,7 @@ This portfolio demonstrates relational database design, query processing and opt
 ## Portfolio folders
 | Portfolio | Folder |
 |---|---|
-| Design and modelling | `portfolio-1-database-design/` |
+| Design and modelling | [`portfolio-1-database-design/`](portfolio-1-database-design) |
 | Query processing and optimisation | `portfolio-2-query-optimisation/` |
 | Transactions and concurrency | `portfolio-3-transactions-concurrency/` |
 | NoSQL | `portfolio-4-nosql/` |
