@@ -20,10 +20,10 @@ This portfolio demonstrates relational database design, query processing and opt
 | Portfolio | Folder |
 |---|---|
 | Design and modelling | [`portfolio-1-database-design/`](portfolio-1-database-design) |
-| Query processing and optimisation | `portfolio-2-query-optimisation/` |
-| Transactions and concurrency | `portfolio-3-transactions-concurrency/` |
-| NoSQL | `portfolio-4-nosql/` |
-| Distributed and cloud architecture| `portfolio-5-distributed-cloud/` |
+| Query processing and optimisation | [`portfolio-2-query-optimisation/`](portfolio-2-query-optimisation) |
+| Transactions and concurrency | [`portfolio-3-transactions-concurrency/`](portfolio-3-transactions-concurrency) |
+| NoSQL | [`portfolio-4-nosql/`](portfolio-4-nosql) |
+| Distributed and cloud architecture| [`portfolio-5-distributed-cloud/`](portfolio-5-distributed-cloud) |
 | Final documentation | `docs/` |
 
 Each portfolio folder has its own README with the exact commands, expected results and the evidence file it produces.
