@@ -14,7 +14,6 @@ Amounts are fictional Nigerian naira values. The final observed committed balanc
 
 ## Files and safe execution order
 
-| File | Purpose | 
 - [Session A SQL](P3_SESSION_A.sql)
 - [Session B SQL](P3_SESSION_B.sql)
 - [Transaction SQL](P3_TRANSACTION.sql) - Commit and Rollback
