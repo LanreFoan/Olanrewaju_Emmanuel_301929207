@@ -1,4 +1,4 @@
-# Portfolio 2 — Query Processing and Optimisation
+# Portfolio 2  Query Processing and Optimization
 
 In Portfolio 2, a **separate** schema `p2_benchmark` holds synthetic appointment history, so the original Portfolio 1 clinical and billing records remain untouched. Patient and doctor IDs came from the original data, rather than arbitrary guessed keys. Previous pgAdmin verification recorded **100,000 synthetic rows**.
 
@@ -42,20 +42,28 @@ The same query subsequently produced a **Bitmap Index Scan** on `idx_ahs_appoint
 
 One post-index screenshot shows **7.410 ms** with index and heap scans; another shows **12.042 ms**. These are additional executions **not included** in the specified three post-index measurement runs, which were reported separately.
 
-## 7. Timing comparison and calculations
+## Timing comparison and calculations
 
 | Measured run | Before indexing (ms) | After indexing (ms) |
 |---|---:|---:|
 | 1 | 13.682 | 0.512 |
-| 2 | 13.682* | 0.314 |
+| 2 | 13.682 | 0.314 |
 | 3 | 22.006 | 0.186 |
 | **Mean** | **16.457** | **0.337** |
 
-Based on the reported three-run classification, the average time was reduced by **approximately 97.95%**, or an **approximately 48.79× speedup**. Calculations use the unrounded averages.
+All times ABOVE are **PostgreSQL `Execution Time` from `EXPLAIN (ANALYZE, BUFFERS)`**, in milliseconds, as reported in the conversation. 
+
+Calculations with unrounded means:
+
+- Pre-index mean = `(13.682 + 13.682 + 22.006) / 3 = 16.456666… ms`
+- Post-index mean = `(0.512 + 0.314 + 0.186) / 3 = 0.337333… ms`
+- Indicative time reduction = `(1 − 0.337333… / 16.456666…) × 100 ≈ 97.95%`
+- Indicative speedup = `16.456666… / 0.337333… ≈ 48.79×`
+  Based on the reported three-run classification, the average time was reduced by **approximately 97.95%**, or an **approximately 48.79× speedup**. Calculations use the unrounded averages.
 
 
 ## Interpretation and limitations
 
 The baseline Sequential Scan examined all rows, returning only a very small subset. Following index creation, an index-assisted bitmap plan located the relevant timestamps and table rows more selectively. The reported indexed runs are, on average, faster than the reported baseline runs, consistent with the plan change.
 
-Observed times vary (including post-index runs of 7.410 and 12.042 ms), so indexing alone does not guarantee a fixed execution time. Cache state, operating system activity, physical I/O, planner estimates, and repeated measurements can affect timing. `EXPLAIN ANALYZE` reports server-side execution time; it is **not** the pgAdmin UI round-trip or Query History duration. B-tree indexes also consume storage and add maintenance cost during data modification. The benchmark uses synthetic data and does not directly establish production workload performance.
+Observed times vary (including post-index runs of 7.410 and 12.042 ms), so indexing alone does not guarantee a fixed execution time. Cache state, operating system activity, physical I/O, planner estimates, and repeated measurements can affect timing. `EXPLAIN ANALYZE` reports server-side execution time; it is **not** the pgAdmin UI round-trip or Query History duration. B-tree indexes also consume storage and incur maintenance costs during data modifications. The benchmark uses synthetic data and does not directly establish production workload performance.
