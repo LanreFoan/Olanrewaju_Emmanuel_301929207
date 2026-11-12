@@ -15,7 +15,7 @@ Amounts are fictional Nigerian naira values. The final observed committed balanc
 ## Files and safe execution order
 
 | File | Purpose | 
-|---|---|---|
+|---|---|
 | `01_Setup_HISTORICAL.sql` | Define separate schema and fictional invoice | 
 | `02_COMMIT_HISTORICAL.sql` | Original payment transaction | 
 | `03_ROLLBACK_Repeatable_Demo.sql` | Demonstrate cancelling a temporary payment | 
