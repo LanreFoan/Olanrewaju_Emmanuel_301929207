@@ -54,8 +54,8 @@ Two pgAdmin sessions read or modified the same invoice. An earlier attempt accid
 
 | Moment | Session A | Session B |
 |---|---:|---:|
-| Before A commits | 30,000.00 (own uncommitted UPDATE) | 25,000.00 (previously committed value) |
-| After A commits | 30,000.00 | 30,000.00 (fresh SELECT) |
+| Before A commits | 30,000.00 | 25,000.00 |
+| After A commits | 30,000.00 | 30,000.00  |
 
 **Interpretation:** A separate session was not shown the uncommitted update (dirty reads prevented). Under `READ COMMITTED`, a later statement can see a newly committed value; if both B queries were in the same open transaction, this illustrates a non-repeatable read. The screenshots do not include backend PID comparisons, so this is a limitation in the available evidence.
 
