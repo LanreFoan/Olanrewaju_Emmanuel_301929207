@@ -15,16 +15,9 @@ Amounts are fictional Nigerian naira values. The final observed committed balanc
 ## Files and safe execution order
 
 | File | Purpose | 
-|---|---|
-| `01_Setup_HISTORICAL.sql` | Define separate schema and fictional invoice | 
-| `02_COMMIT_HISTORICAL.sql` | Original payment transaction | 
-| `03_ROLLBACK_Repeatable_Demo.sql` | Demonstrate cancelling a temporary payment | 
-| `04_Isolation_Session_A.sql` | Instructions for uncommitted update |
-| `05_Isolation_Session_B.sql` | Instructions for concurrent reads | 
-| `06_Row_Lock_Session_A.sql` | Lock invoice row | Multi-step guide |
-| `07_Row_Lock_Session_B.sql` | Detect conflicting lock using NOWAIT | 
-| `08_Lock_Release_Verification.sql` | Lock reacquisition after Session A commits |
-| `09_Read_Only_Final_Check.sql` | Inspect current invoice state |
+- [Session A SQL](P3_SESSION_A.sql)
+- [Session B SQL](P3_SESSION_B.sql)
+- [Transaction SQL](P3_TRANSACTION.sql) - Commit and Rollback
 
 The two Query Tool tabs must represent different backend sessions. Verify this by running `SELECT pg_backend_pid()` in each and comparing the IDs. pgAdmin may retain transaction state across separate executions in a tab: do not run an entire multi-stage workflow in one selection. If testing is interrupted, use `ROLLBACK` in any still-open demo session before continuing. Avoid changing PostgreSQL isolation settings globally.
 
