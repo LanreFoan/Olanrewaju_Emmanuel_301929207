@@ -89,5 +89,5 @@ The exercise is not a production billing system: its single `amount_paid` column
 
 ## Practical evidence and documentation
 
-- [screenshots](portfolio-3-transactions-concurrency/screenshots/) — original pgAdmin captures supplied during the exercise.
+- [screenshots](screenshots/) — original pgAdmin captures supplied during the exercise.
 
