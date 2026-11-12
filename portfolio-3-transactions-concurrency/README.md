@@ -38,7 +38,7 @@ The initial payment record was 0.00. The billing officer added 10,000.00 using `
 
 **Interpretation:** The payment survived the end of the transaction and was visible to a later query, demonstrating normal durability behavior after commit. No crash-recovery test was performed.
 
-Evidence: [P3_Commit_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Commit_Verification)
+Evidence: [P3_Commit_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Commit_Verification.jpg)
 
 ## Experiment B — ROLLBACK (atomicity)
 
@@ -46,7 +46,7 @@ The exercise simulated an incorrect additional payment of 15,000.00 in an uncomm
 
 **Interpretation:** `ROLLBACK` discarded any uncommitted change without undoing the previously committed payment. The supplied screenshot shows the post-rollback verification; no screenshot of the temporary 25,000.00 value was supplied.
 
-Evidence: [P3_Rollback_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Rollback_Verification)
+Evidence: [P3_Rollback_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Rollback_Verification.jpg)
 
 ## Experiment C — READ COMMITTED isolation
 
@@ -59,7 +59,7 @@ Two pgAdmin sessions read or modified the same invoice. An earlier attempt accid
 
 **Interpretation:** A separate session was not shown the uncommitted update (dirty reads prevented). Under `READ COMMITTED`, a later statement can see a newly committed value; if both B queries were in the same open transaction, this illustrates a non-repeatable read. The screenshots do not include backend PID comparisons, so this is a limitation in the available evidence.
 
-Evidence: [P3_Session_A_Uncommitted](portfolio-3-transactions-concurrency/screenshots/P3_Session_A_Uncommitted), [P3_Session_B_Before_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_Before_Commit), [P3_Session_B_After_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_After_Commit)
+Evidence: [P3_Session_A_Uncommitted](portfolio-3-transactions-concurrency/screenshots/P3_Session_A_Uncommitted.jpg), [P3_Session_B_Before_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_Before_Commit.jpg), [P3_Session_B_After_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_After_Commit.jpg)
 
 ## Experiment D — Concurrency control with FOR UPDATE NOWAIT
 
