@@ -38,7 +38,7 @@ The initial payment record was 0.00. The billing officer added 10,000.00 using `
 
 **Interpretation:** The payment survived the end of the transaction and was visible to a later query, demonstrating normal durability behavior after commit. No crash-recovery test was performed.
 
-Evidence: `screenshots/P3_04_Commit_Verification.png`.
+Evidence: [P3_Commit_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Commit_Verification.jpg)
 
 ## Experiment B — ROLLBACK (atomicity)
 
@@ -46,7 +46,7 @@ The exercise simulated an incorrect additional payment of 15,000.00 in an uncomm
 
 **Interpretation:** `ROLLBACK` discarded any uncommitted change without undoing the previously committed payment. The supplied screenshot shows the post-rollback verification; no screenshot of the temporary 25,000.00 value was supplied.
 
-Evidence: `screenshots/P3_06_Rollback_Verification.png`.
+Evidence: [P3_Rollback_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Rollback_Verification.jpg)
 
 ## Experiment C — READ COMMITTED isolation
 
@@ -59,7 +59,7 @@ Two pgAdmin sessions read or modified the same invoice. An earlier attempt accid
 
 **Interpretation:** A separate session was not shown the uncommitted update (dirty reads prevented). Under `READ COMMITTED`, a later statement can see a newly committed value; if both B queries were in the same open transaction, this illustrates a non-repeatable read. The screenshots do not include backend PID comparisons, so this is a limitation in the available evidence.
 
-Evidence: `screenshots/P3_07_Session_A_Uncommitted.png`, `screenshots/P3_08_Session_B_Before_Commit.png`, `screenshots/P3_09_Session_B_After_Commit.png`.
+Evidence: [P3_Session_A_Uncommitted](portfolio-3-transactions-concurrency/screenshots/P3_Session_A_Uncommitted.jpg), [P3_Session_B_Before_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_Before_Commit.jpg), [P3_Session_B_After_Commit](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_After_Commit.jpg)
 
 ## Experiment D — Concurrency control with FOR UPDATE NOWAIT
 
@@ -72,9 +72,9 @@ SQL state: 55P03
 
 Session B then rolled back its aborted transaction; Session A committed and released its lock. When Session B repeated `FOR UPDATE NOWAIT`, the transaction completed successfully (`COMMIT` in Messages).
 
-**Interpretation:** PostgreSQL enforces conflicting row-level locks. `NOWAIT` fails immediately rather than queueing and waiting for the lock to be released. The final screenshot displays successful completion, not the SELECT result grid.
+**Interpretation:** PostgreSQL enforces conflicting row-level locks. `NOWAIT` fails immediately rather than queuing and waiting for the lock to be released. The final screenshot displays successful completion, not the SELECT result grid.
 
-Evidence: `screenshots/P3_11_Session_B_Lock_Conflict.png`, `screenshots/P3_12_Lock_Released_Verification.png`.
+Evidence: [P3_Session_B_Lock_Conflict](portfolio-3-transactions-concurrency/screenshots/P3_Session_B_Lock_Conflict.jpg), [P3_Lock_Released_Verification](portfolio-3-transactions-concurrency/screenshots/P3_Lock_Released_Verification.jpg)
 
 ## ACID concepts and limitations
 
@@ -89,7 +89,5 @@ The exercise is not a production billing system: its single `amount_paid` column
 
 ## Practical evidence and documentation
 
-- `screenshots/` — original pgAdmin captures supplied during the exercise.
-- `SCREENSHOT_MANIFEST.md` — evidence inventory, limitations and missing captures.
-- `RESULTS_AND_REFLECTION.md` — observed results, ACID explanations, student reflection draft and AI-use declaration.
+- [screenshots](portfolio-3-transactions-concurrency/screenshots/) — original pgAdmin captures supplied during the exercise.
 
