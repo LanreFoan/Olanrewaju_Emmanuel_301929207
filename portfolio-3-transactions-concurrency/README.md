@@ -14,17 +14,17 @@ Amounts are fictional Nigerian naira values. The final observed committed balanc
 
 ## Files and safe execution order
 
-| File | Purpose | Safe to rerun? |
+| File | Purpose | 
 |---|---|---|
-| `01_Setup_HISTORICAL.sql` | Define separate schema and fictional invoice | Idempotent for existing invoice, but not a reset |
-| `02_COMMIT_HISTORICAL.sql` | Original payment transaction | **No** — would add another 10,000 |
-| `03_ROLLBACK_Repeatable_Demo.sql` | Demonstrate cancelling a temporary payment | Only with deliberate manual rollback; never commit |
-| `04_Isolation_Session_A.sql` | Instructions for uncommitted update | Multi-step guide; execute only selected statements separately |
-| `05_Isolation_Session_B.sql` | Instructions for concurrent reads | Multi-step guide; execute only selected statements separately |
+| `01_Setup_HISTORICAL.sql` | Define separate schema and fictional invoice | 
+| `02_COMMIT_HISTORICAL.sql` | Original payment transaction | 
+| `03_ROLLBACK_Repeatable_Demo.sql` | Demonstrate cancelling a temporary payment | 
+| `04_Isolation_Session_A.sql` | Instructions for uncommitted update |
+| `05_Isolation_Session_B.sql` | Instructions for concurrent reads | 
 | `06_Row_Lock_Session_A.sql` | Lock invoice row | Multi-step guide |
-| `07_Row_Lock_Session_B.sql` | Detect conflicting lock using NOWAIT | Multi-step guide; expected SQLSTATE 55P03 |
-| `08_Lock_Release_Verification.sql` | Lock reacquisition after Session A commits | Only after both sessions are cleaned up |
-| `09_Read_Only_Final_Check.sql` | Inspect current invoice state | Yes |
+| `07_Row_Lock_Session_B.sql` | Detect conflicting lock using NOWAIT | 
+| `08_Lock_Release_Verification.sql` | Lock reacquisition after Session A commits |
+| `09_Read_Only_Final_Check.sql` | Inspect current invoice state |
 
 The two Query Tool tabs must represent different backend sessions. Verify this by running `SELECT pg_backend_pid()` in each and comparing the IDs. pgAdmin may retain transaction state across separate executions in a tab: do not run an entire multi-stage workflow in one selection. If testing is interrupted, use `ROLLBACK` in any still-open demo session before continuing. Avoid changing PostgreSQL isolation settings globally.
 
