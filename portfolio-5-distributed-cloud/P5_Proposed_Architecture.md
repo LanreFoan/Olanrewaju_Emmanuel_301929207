@@ -5,7 +5,7 @@
 The proposed architecture extends the **clinical document model** from Portfolio 4 while preserving a clear boundary with the **relational transaction model** from Portfolios 1–3.
 It is designed for a future MetriCare that may need multi-branch access, greater tolerance for server failures, and controlled handling of clinical data.
 
-For a compact visual representation, see [Architecture_Diagram.md](P5_Architecture_Diagram.md).
+For a compact visual representation, see [Architecture_Diagram](P5_Architecture_Diagram.md).
 
 ## Existing baseline versus future design
 
