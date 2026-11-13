@@ -8,8 +8,8 @@
 
 | User | Operations |
 |---|---|
-| Front-desk staff | Enrol patients, maintain patient data, and make or cancel appointments |
-| Billing officers | Create invoice for payment, document payment, and manage outstanding payment balances |
+| Front-desk staff | Enroll patients, maintain patient data, and make or cancel appointments |
+| Billing officers | Create invoices for payment, document payment, and manage outstanding payment balances |
 | Physicians | Consult with patients, document the diagnosis, order lab investigations, and prescribe medicines |
 | Pharmacists | Review medicines prescribed, and document dispensing of medicines |
 | Lab scientist | Record lab investigation orders, store test results, and update lab investigation order statuses |
@@ -18,7 +18,7 @@
 **Major data stored:** patients, doctors and departments, appointments, consultations, diagnoses, medications and stock, prescriptions, lab tests/orders/results, invoices and payments.
 
 **Key operations supported:**
-1. Book an appointment without duplicating booking a doctor
+1. Book an appointment without duplicating a booking for a doctor
 2. Retrieve a patient's full history
 3. Record consultation, diagnosis, prescription, and lab orders/results
 4. Dispense medication 
@@ -35,28 +35,28 @@
 7. Invoices must have unique InvoiceIDs, referencing one patient, and each invoice can have many payments, but the total amount of recorded payments cannot be greater than the amount of the invoice.
 
 ## Scope 
-The database deals with registration of patients, personnel and departments information, appointment, consultations, diagnosis, laboratory tests, prescriptions, medications, invoices, and payments. One appointment consists of the relationship between one patient and one doctor and can lead to the consultation at all with only one outcome. Consultation can involve several diagnoses, prescriptions, and laboratory tests. Laboratory test is related to only one type of test and includes only one recorded test result. Prescriptions can include several medications, and invoices can have several payments, but cannot exceed the total invoice amount. There are used unique keys and fictitious data. Management of inpatients, surgery, insurance claim processing, payroll, complete pharmacy database, and integration with other systems are not included.
+The database handles the registration of patients, personnel, and departments; appointments, consultations, diagnoses, laboratory tests, prescriptions, medications, invoices, and payments. An appointment is the relationship between one patient and one doctor and can lead to a consultation, with only one outcome. A consultation can involve several diagnoses, prescriptions, and laboratory tests. A laboratory test is specific to one type of test and includes only one recorded result. Prescriptions can include several medications, and invoices can include several payments, but the total amount cannot exceed the invoice total. Unique keys and fictitious data are used. Management of inpatients, surgery, insurance claim processing, payroll, complete pharmacy database, and integration with other systems are not included.
 
 ## Implementation files
 
 | File | Contents |
 | --- | --- |
-| [Design](portfolio_1_Design.md) | Entities, attributes, keys, relationships and business rules |
-| [ER diagram](portfolio_1_ERDiagram.md) | Mermaid ER diagram + cardinality decisions |
-| [Normalisation](portfolio_1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF reasoning and trade-offs |
-| [Schema](portfolio_1_Schema.sql) | PostgreSQL table definitions, complete DDL with keys and constraints |
-| [Sample Data](portfolio_1_SampleData.sql) | Fictional members, a book, physical copies and loans |
-| [Constraint tests](portfolio_1_ConstraintTests.sql) | Deliberate invalid inserts, proving the constraints work |
+| [Design](P1_Design.md) | Entities, attributes, keys, relationships and business rules |
+| [ER diagram](P1_ERDiagram.md) | Mermaid ER diagram + cardinality decisions |
+| [Normalisation](P1_Normalisation.md) | Example tables showing 1NF, 2NF and 3NF reasoning and trade-offs |
+| [Schema](P1_Schema.sql) | PostgreSQL table definitions, complete DDL with keys and constraints |
+| [Sample Data](P1_SampleData.sql) | Fictional members, a book, physical copies and loans |
+| [Constraint tests](P1_ConstraintTests.sql) | Deliberate invalid inserts, proving the constraints work |
 | [Evidence](screenshots) | Links to the screenshots stored in screenshots/. |
 
 ## Implementation
-The MetriCare Specialist Hospital database was implemented using PostgreSQL 18 and pgAdmin 4. It consists of 11 related tables covering patients, departments, staff, appointments, consultations, diagnoses, laboratory requests, prescriptions, prescription medications, invoices and payments.
+The MetriCare Specialist Hospital database was implemented using PostgreSQL 18 and pgAdmin 4. It consists of 11 related tables covering patients, departments, staff, appointments, consultations, diagnoses, laboratory requests, prescriptions, prescription medications, invoices, and payments.
 
-Primary keys, foreign keys, NOT NULL, UNIQUE and CHECK constraints were implemented to maintain data integrity and enforce the database rules. Sample records were inserted successfully into the database.
+Primary keys, foreign keys, NOT NULL, UNIQUE, and CHECK constraints were implemented to maintain data integrity and enforce the database rules. Sample records were inserted successfully into the database.
 
 ## Test Results
 The database constraints were tested using the SQL statements in portfolio_1_ConstraintTests.sql. All 12 invalid INSERT statements were rejected by PostgreSQL as expected.
 
-The tests covered NOT NULL, UNIQUE, FOREIGN KEY and CHECK constraints. For example, an attempt to insert a patient without a date of birth was rejected with SQLSTATE 23502, confirming that the NOT NULL constraint on Patients.DateOfBirth was working correctly.
+The tests covered NOT NULL, UNIQUE, FOREIGN KEY, and CHECK constraints. For example, an attempt to insert a patient without a date of birth was rejected with SQLSTATE 23502, confirming that the NOT NULL constraint on Patients.DateOfBirth was working correctly.
 
 The test results demonstrate that the implemented constraints prevent invalid records from being inserted and help maintain data integrity.
