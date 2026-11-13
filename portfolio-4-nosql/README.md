@@ -10,8 +10,8 @@
 | [P4_Insert_Documents.js](P4_Insert_Documents.js) | Insert the three fictional patients and encounters if not already present |
 | [P4_CRUD_Operations.js](P4_CRUD_Operations.js) | Queries on patient and nested diagnosis; update lab 501; search pending labs; create and delete patient 999 |
 | [P4_Aggregation_Queries.js](P4_Aggregation_Queries.js) | Count consultations per diagnosis and report sample counts |
-| [Sample_Consultation.json](Sample_Consultation.json) | Portable JSON illustration of a consultation (date as ISO string) |
-| [NoSQL_Data_Model.md](NoSQL_Data_Model.md) | Model and comparison with relational design |
+| [Sample_Consultation.json](P4_Sample_Consultation.json) | Portable JSON illustration of a consultation (date as ISO string) |
+| [NoSQL_Data_Model.md](P4_NoSQL_Data_Model.md) | Model and comparison with relational design |
 | [screenshots](screenshots) | Screenshots to demonstrate claims |
 
 ### Set-Up
