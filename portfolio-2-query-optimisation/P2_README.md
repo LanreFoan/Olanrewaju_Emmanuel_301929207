@@ -1,4 +1,4 @@
-# Portfolio 2  Query Processing and Optimization
+# Portfolio 2 Query Processing and Optimization
 
 In Portfolio 2, a **separate** schema `p2_benchmark` holds synthetic appointment history, so the original Portfolio 1 clinical and billing records remain untouched. Patient and doctor IDs came from the original data, rather than arbitrary guessed keys. Previous pgAdmin verification recorded **100,000 synthetic rows**.
 
