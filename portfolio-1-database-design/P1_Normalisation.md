@@ -13,7 +13,7 @@ Suppose a hospital records patient details, doctor details, and appointment info
  | 1 | Adaeze Okafor | 1 | Dr. Chika Nwosu |  Appointment 101: 10 Nov 2026, 09:00; Appointment 102: 10 Nov 2026, 10:00 |
  | 2 | Tunde Bello |   1 | Dr. Chika Nwosu |    Appointment 103: 10 Nov 2026, 11:00 |
 
-The first row contains two appointments in one cell. Finding, updating, or cancelling one appointment becomes difficult because multiple records are stored together.
+The first row contains two appointments in one cell. Finding, updating, or canceling one appointment becomes difficult because multiple records are stored together.
 
 **Problem:** Appointment information is not stored as one separate record per appointment, and patient and doctor details are repeated.
 
@@ -51,7 +51,7 @@ However, patient and doctor details still repeat. These details describe patient
 
 ## 3NF: Keep Details With the Entity They Describe
 
-**Third Normal Form (3NF)** means the table is in 2NF, and non-key fields depend on the key, the whole key, and nothing but the key. In simple terms, information about a patient belongs in the patient table, while information about a doctor belongs in the staff table.
+**Third Normal Form (3NF)** means the table is in 2NF and that non-key fields depend on the whole key, nothing but the key. In simple terms, information about a patient belongs in the patient table, while information about a doctor belongs in the staff table.
 
 The following dependencies explain the separation:
 
@@ -110,7 +110,7 @@ For example, Appointment 101 has `PatientID = 1` and `DoctorID = 10`. These IDs 
 
 The final design uses `AppointmentID` as the primary key rather than a combined key such as `(PatientID, AppointmentDateTime)`. This allows a patient to have multiple appointments without relying on appointment dates to identify records.
 
-**Important:** Adding an ID alone does not establish 3NF. The separation of patient, staff, and department details removes the unwanted dependencies.
+**Important:** Adding an ID alone does not establish 3NF. Separating patient, staff, and department details removes unwanted dependencies.
 
 
 The four tables above demonstrate normalisation using appointment records. The complete hospital database retains all agreed entities
