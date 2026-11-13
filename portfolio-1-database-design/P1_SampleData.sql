@@ -1,6 +1,4 @@
 -- Sample Data for MetriCare Specialist Hospital: fictional dataset
-
-
 BEGIN;
 
 -- Departments
