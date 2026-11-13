@@ -1,4 +1,4 @@
-// MetriCare Portfolio 4 — diagnosis reporting via MongoDB aggregation.
+// Portfolio 4 — diagnosis reporting via MongoDB aggregation.
 const met = db.getSiblingDB('metricare_nosql');
 print('Diagnosis counts (one diagnosis-array element per count):');
 printjson(met.consultations.aggregate([
