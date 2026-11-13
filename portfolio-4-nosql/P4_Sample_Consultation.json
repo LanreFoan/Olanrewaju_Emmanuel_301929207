@@ -1,0 +1,32 @@
+{
+  "consultationId": 1001,
+  "patientId": 1,
+  "doctor": {
+    "staffId": 1,
+    "fullName": "Dr Chika Nwosu",
+    "department": "Internal Medicine"
+  },
+  "consultationDate": "2026-11-10T00:00:00.000Z",
+  "notes": "Patient presented for blood pressure review.",
+  "diagnoses": [
+    {
+      "diagnosisName": "Hypertension",
+      "status": "Confirmed"
+    }
+  ],
+  "laboratoryRequests": [
+    {
+      "labRequestId": 501,
+      "testType": "Lipid Profile",
+      "status": "Completed",
+      "result": "Within reference limits"
+    }
+  ],
+  "prescriptions": [
+    {
+      "medicationName": "Amlodipine",
+      "dosage": "5 mg",
+      "frequency": "Once daily"
+    }
+  ]
+}
