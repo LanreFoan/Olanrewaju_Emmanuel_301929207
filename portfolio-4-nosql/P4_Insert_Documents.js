@@ -1,5 +1,5 @@
 // MetriCare Portfolio 4: fictional demonstration documents.
-// Run after 01_Create_Database.js.
+// Run after P4_Create_Database.js.
 // $setOnInsert avoids duplicates and preserves changes made to existing records.
 
 const met = db.getSiblingDB('metricare_nosql');
