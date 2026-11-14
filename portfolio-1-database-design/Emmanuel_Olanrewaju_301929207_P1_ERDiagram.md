@@ -112,6 +112,6 @@ A unique key prevents duplicate values in a field or combination of fields. For 
 `||` means exactly one,
 `o{` means zero or many,
 `o|` means zero or one,
-`|{` means One or many
+`|{` means one or many
 
 **For example, `PATIENT ||--o{ APPOINTMENT` means that each appointment belongs to exactly one patient, while a patient can have zero or many appointments.
