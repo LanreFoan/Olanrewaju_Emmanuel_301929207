@@ -25,13 +25,13 @@ flowchart TB
 
     Users --> API
     API -->|"Clinical reads / writes"| P
-    API -->|"Relational billing/scheduling"| SQL
+    API -->|"Relational billing / scheduling"| SQL
     P -.->|"Backup policy"| Backup
 
     classDef proposed fill:#eef6f4,stroke:#238b73,color:#134e40,stroke-width:1px;
     classDef boundary fill:#f6f7fa,stroke:#64748b,color:#1e293b;
     class P,S1,S2,API proposed;
-    class Users, SQL, Backup boundary;
+    class Users,SQL,Backup boundary;
 ```
 
 **Interpretation:**
