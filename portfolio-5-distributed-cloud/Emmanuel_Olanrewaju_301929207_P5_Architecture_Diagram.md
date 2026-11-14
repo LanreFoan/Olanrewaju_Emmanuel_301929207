@@ -43,4 +43,4 @@ flowchart TB
 **Note:** No direct network path from the real local Portfolio 4 database to this proposed cloud deployment is shown, because no such connection exists in the completed exercise.
 
 
-For detailed component responsibilities: [Proposed_Architecture.md](P5_Proposed_Architecture.md).
+For detailed component responsibilities: [Proposed_Architecture.md](Emmanuel_Olanrewaju_301929207_P5_Proposed_Architecture.md).
