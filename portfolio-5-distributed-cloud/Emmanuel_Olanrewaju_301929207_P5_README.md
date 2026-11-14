@@ -13,7 +13,7 @@
 
 | File | Contents |
 |---|---|
-| [Distributed Cloud Database Discussion](Emmanuel_Olanrewaju_301929207_P5_Distributed_Cloud_Database_Discussion.md) | Case-study discussion of replication, sharding, availability, consistency, security, benefits and limitations |
+| [Distributed Cloud Database Discussion](Emmanuel_Olanrewaju_301929207_P5_Distributed_Cloud_Database.md) | Case-study discussion of replication, sharding, availability, consistency, security, benefits and limitations |
 | [Proposed Architecture](Emmanuel_Olanrewaju_301929207_P5_Proposed_Architecture.md) | Proposed components, data flow, design decisions, risk controls, and phased rollout |
 | [Architecture Diagram](Emmanuel_Olanrewaju_301929207_P5_Architecture_Diagram.md) | **Editable Mermaid diagrams** of the proposed deployment and a potential future sharded design |
 
