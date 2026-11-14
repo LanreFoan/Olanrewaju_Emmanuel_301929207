@@ -44,7 +44,7 @@ The recorded constraint-test exercise reports **12 deliberately invalid inserts 
 
 ### Entity Relationship Diagram
 
-![MetriCare Specialist Hospital ER Diagram](images/Hospital_ER_Diagram.png)
+![MetriCare Specialist Hospital ER Diagram](images/Emmanuel_Olanrewaju_301929207_Hospital_ER_Diagram.png)
 
 *Figure 1. MetriCare Specialist Hospital ER diagram (Portfolio 1). Full-size diagram available in the GitHub repository.*
 
