@@ -26,7 +26,7 @@
 | Relationship | Relationship rule |
 |---|---|
 | Patient–Appointment | One patient can have zero or many appointments; each appointment belongs to exactly one patient. |
-| Department–Staff | One department can have zero or many staff members; each doctor belongs to exactly one department. |
+| Department–Staff | One department can have zero or many staff members; each staff member belongs to exactly one department. |
 | Staff–Appointment | One doctor can have zero or many appointments; each appointment has exactly one doctor. |
 | Appointment–Consultation | An appointment can have zero or one consultation; each consultation belongs to exactly one appointment. |
 | Consultation–Diagnosis | One consultation can have zero or many diagnoses; each diagnosis belongs to exactly one consultation. |
@@ -49,7 +49,7 @@
 
 3. **Appointments:** `AppointmentID` is the primary key, and `PatientID` and `DoctorID` are required foreign keys referencing the Patient and Staff tables. Each appointment must have a valid date and time, and both patients and doctors can have multiple appointments.
 
-4. **No conflicting appointments:** A doctor cannot have two active appointments scheduled for the same date and time. A partial unique index enforces this rule while excluding cancelled appointments.
+4. **No conflicting appointments:** A doctor cannot have two active appointments scheduled for the same date and time. A partial unique index enforces this rule while excluding canceled appointments.
 
 5. **Consultations:** `ConsultationID` is the primary key, and `AppointmentID` is a unique foreign key referencing the Appointment table. This ensures that each appointment has at most one consultation; the associated patient and doctor are identified through the linked appointment.
 
@@ -57,6 +57,6 @@
 
 7. **Prescriptions:** `PrescriptionID` is the primary key, with required `PatientID` and `DoctorID` foreign keys. Each prescription can contain multiple medication records, and each record must include a medication name, dosage, and frequency.
 
-8. **Invoices and payments:** `InvoiceID` and `PaymentID` are primary keys, and `Payment.InvoiceID` is a foreign key referencing `Invoice.InvoiceID`. Invoice and payment amounts must be positive, and total payments must not exceed the invoice amount; a database trigger or controlled transaction enforces this rule because a simple `CHECK` constraint cannot safely validate totals across multiple payment records.
+8. **Invoices and payments:** `InvoiceID` and `PaymentID` are primary keys, and `Payment.InvoiceID` is a foreign key referencing `Invoice.InvoiceID`. Invoice and payment amounts must be positive, and total payments must not exceed the invoice amount; a database trigger or a controlled transaction enforces this rule, as a simple `CHECK` constraint cannot safely validate totals across multiple payment records.
 
 **Consultations inherit their patient and doctor through the linked appointment rather than storing duplicate foreign keys. This preserves the agreed relationship while reducing redundant data.
