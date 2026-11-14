@@ -35,6 +35,6 @@
 
 The proposed first step for a growing MetriCare would be **replication and sound backup/security controls**, not immediate sharding. Replication is a response to single-node failure; sharding is a response to partitionable scale and workload pressures. Neither eliminates the need for strong access control, independent recovery, application reliability, and governance.
 
-See the [technical discussion](Emmanuel_Olanrewaju_301929207_P5_Distributed_Cloud_Database_Discussion.md) for details and the [architecture diagram](Emmanuel_Olanrewaju_301929207_P5_Architecture_Diagram.md) for the conceptual topology.
+See the [technical discussion](Emmanuel_Olanrewaju_301929207_P5_Distributed_Cloud_Database.md) for details and the [architecture diagram](Emmanuel_Olanrewaju_301929207_P5_Architecture_Diagram.md) for the conceptual topology.
 
 
