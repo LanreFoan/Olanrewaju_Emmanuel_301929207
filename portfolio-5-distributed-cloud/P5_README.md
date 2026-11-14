@@ -13,10 +13,10 @@
 
 | File | Contents |
 |---|---|
-| [Distributed Cloud Database Discussion](Distributed_Cloud_Database_Discussion.md) | Case-study discussion of replication, sharding, availability, consistency, security, benefits and limitations |
-| [Proposed Architecture](Proposed_Architecture.md) | Proposed components, data flow, design decisions, risk controls, and phased rollout |
-| [Architecture Diagram](Architecture_Diagram.md) | **Editable Mermaid diagrams** of the proposed deployment and a potential future sharded design |
-| [Technical Reflection.md](Technical_Reflection.md) | Draft individual reflection, evidence boundary, limitations and AI-use declaration for review |
+| [Distributed Cloud Database Discussion](Emmanuel_Olanrewaju_301929207_Distributed_Cloud_Database_Discussion.md) | Case-study discussion of replication, sharding, availability, consistency, security, benefits and limitations |
+| [Proposed Architecture](Emmanuel_Olanrewaju_301929207_Proposed_Architecture.md) | Proposed components, data flow, design decisions, risk controls, and phased rollout |
+| [Architecture Diagram](Emmanuel_Olanrewaju_301929207_Architecture_Diagram.md) | **Editable Mermaid diagrams** of the proposed deployment and a potential future sharded design |
+| [Technical Reflection.md](Emmanuel_Olanrewaju_301929207_Technical_Reflection.md) | Draft individual reflection, evidence boundary, limitations and AI-use declaration for review |
 
 
 ##  Proposed approach 
@@ -36,6 +36,6 @@
 
 The proposed first step for a growing MetriCare would be **replication and sound backup/security controls**, not immediate sharding. Replication is a response to single-node failure; sharding is a response to partitionable scale and workload pressures. Neither eliminates the need for strong access control, independent recovery, application reliability, and governance.
 
-See the [technical discussion](Distributed_Cloud_Database_Discussion.md) for details and the [architecture diagram](Architecture_Diagram.md) for the conceptual topology.
+See the [technical discussion](Emmanuel_Olanrewaju_301929207_Distributed_Cloud_Database_Discussion.md) for details and the [architecture diagram](Emmanuel_Olanrewaju_301929207_Architecture_Diagram.md) for the conceptual topology.
 
 
